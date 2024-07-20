@@ -7,7 +7,7 @@ void App::run()
 {
     if (!systemInitialize()) return;
 
-    GameWindow window("test game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_RESIZABLE);
+    GameWindow window("Pix Adventure", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_RESIZABLE);
 
     while(App::running){
     }
