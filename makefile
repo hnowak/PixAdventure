@@ -8,8 +8,10 @@ OBJ:=$(BIN)obj/
 OBJS:=$(wildcard $(OBJ)*.o)
 FILE:=pixadventure
 
+.PHONY: all
+all: pixadventure
 
-pixadventure: main.o core.o platform.o
+pixadventure: core.o platform.o main.o
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(BIN)$@ -lSDL2
 
 main.o:
@@ -21,5 +23,6 @@ core.o:
 platform.o:
 	$(CXX) $(CXXFLAGS) -c src/platform.cpp -o $(OBJ)$@ -lSDL2
 
+.PHONY: clean
 clean:
 	rm -rf $(BIN)$(FILE) $(OBJS)
