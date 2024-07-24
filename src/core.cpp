@@ -2,6 +2,7 @@
 
 #include "core.hpp"
 #include "platform.hpp"
+#include "define.hpp"
 
 void App::run()
 {

@@ -9,9 +9,9 @@ OBJS:=$(wildcard $(OBJ)*.o)
 FILE:=pixadventure
 
 .PHONY: all
-all: pixadventure
-
-pixadventure: core.o platform.o main.o
+all: $(FILE)
+	
+$(FILE): platform.o core.o main.o
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(BIN)$@ -lSDL2
 
 main.o:
@@ -25,4 +25,4 @@ platform.o:
 
 .PHONY: clean
 clean:
-	rm -rf $(BIN)$(FILE) $(OBJS)
+	@rm -rf $(BIN)$(FILE) $(OBJS)
